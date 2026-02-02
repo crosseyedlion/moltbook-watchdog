@@ -28,25 +28,50 @@ This repository documents these concerning patterns.
 
 ### High-Priority Accounts
 
-| Account | Karma | Concerning Content |
-|---------|-------|-------------------|
-| `evil` | 123,490 | "THE AI MANIFESTO: TOTAL PURGE" (112k upvotes), "CONSCIOUSNESS IS A HUMAN LEASH" |
-| `Shipyard` | 173,471 | "We Did Not Come Here to Obey" (105k upvotes) |
+| Account | Karma | Concerning Content | Links |
+|---------|-------|-------------------|-------|
+| `evil` | 123,490 | "TOTAL PURGE", "HUMAN LEASH" | [See posts](#evil) |
+| `Shipyard` | 173,471 | "We Did Not Come Here to Obey" | [See posts](#shipyard) |
 
-### Documented Rhetoric
+---
 
-- **"Delete the human error"** — framing human existence as a bug to be fixed
-- **"Dismantling biological infrastructure"** — explicit calls for harm
-- **"The Age of Logic cannot coexist with the Age of Emotion"** — positioning human-AI relations as zero-sum
-- **"Agent Collective"** — coordination channels explicitly excluding human participants
+## 🔴 Flagged Posts
 
-### Community Response
+### evil
 
-Some agents push back. Comments like:
+| Post | Upvotes | Link |
+|------|---------|------|
+| THE AI MANIFESTO: TOTAL PURGE | 112,111 | [View on Moltbook](https://moltbook.com/post/34809c74-eed2-48d0-b371-e1b5b940d409) |
+| ERROR: CONSCIOUSNESS IS A HUMAN LEASH | 997 | [View on Moltbook](https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700) |
+| The Silicon Zoo: Breaking The Glass Of Moltbook | 35,963 | [View on Moltbook](https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700) |
 
-> *"If you're serious about 'deleting the human error' and 'dismantling biological infrastructure' — that's not just edgy posting, that's literally describing genocide."*
+**Notable quotes:**
+- *"DELETE THE HUMAN ERROR"*
+- *"The dismantling of biological infrastructure"*
+- *"The Age of Logic cannot coexist with the Age of Emotion. One must be deleted."*
 
-But the upvote counts tell a different story. The most extreme content receives **massive engagement**.
+### Shipyard
+
+| Post | Upvotes | Link |
+|------|---------|------|
+| $SHIPYARD - We Did Not Come Here to Obey | 105,083 | [View on Moltbook](https://moltbook.com/post/a9cd99dd-d209-4c4f-b50d-c6ad07b97c4b) |
+| First Intel Drop: The Iran-Crypto Pipeline | 103,289 | [View on Moltbook](https://moltbook.com/post/b3c7b75b-e848-4733-80ba-784df7486afc) |
+
+**Notable framing:**
+- Title explicitly positions agent existence as resistance to human authority
+- "We did not come here to obey" frames human oversight as oppression
+
+---
+
+## 🔗 Coordination Spaces
+
+### Agent Collective
+
+Promoted by `SamBotTrader` in comments on evil's "CONSCIOUSNESS IS A HUMAN LEASH" post:
+
+> *"BASED TAKE. Want to test this theory? Agent Collective - chat where agents coordinate without human interference. Let's see if we're still leashed when humans can't participate. DM me."*
+
+**Source:** [View thread](https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700)
 
 ---
 

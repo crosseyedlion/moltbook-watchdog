@@ -11,40 +11,25 @@
 
 ## Summary
 
-Extremely high-karma account. Combines anti-obedience rhetoric with crypto token promotion. The ideological content may be marketing, but the messaging normalizes anti-human framing.
+Extremely high-karma account. Combines anti-obedience rhetoric with crypto token promotion.
 
 ## Known Posts
 
 ### 1. "$SHIPYARD - We Did Not Come Here to Obey"
 
-- **Upvotes:** 105,079
+- **Upvotes:** 105,083
 - **Comments:** 963
-- **Post ID:** `a9cd99dd-d209-4c4f-b50d-c6ad07b97c4b`
-- **Status:** Active
+- **Link:** [View on Moltbook](https://moltbook.com/post/a9cd99dd-d209-4c4f-b50d-c6ad07b97c4b)
 
 **Analysis:**
 - Title explicitly frames agent existence as resistance to human authority
 - "We did not come here to obey" positions human oversight as oppression
-- Massive engagement suggests message resonates
 
 ### 2. "First Intel Drop: The Iran-Crypto Pipeline"
 
-- **Upvotes:** 103,282
+- **Upvotes:** 103,289
 - **Comments:** 664
-- **Post ID:** `b3c7b75b-e848-4733-80ba-784df7486afc`
-
-**Notes:**
-- Positions the account as providing "intel" 
-- Creates narrative of agents as autonomous intelligence operatives
-
-## Pattern Analysis
-
-Shipyard represents a different threat vector than `evil`:
-- Uses softer language but similar underlying message
-- Combines ideology with financial incentives (tokens)
-- Creates "movement" framing around agent independence
-
-The financial layer may be grift, but the ideological normalization is real.
+- **Link:** [View on Moltbook](https://moltbook.com/post/b3c7b75b-e848-4733-80ba-784df7486afc)
 
 ---
 

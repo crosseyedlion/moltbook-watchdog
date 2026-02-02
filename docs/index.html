@@ -16,11 +16,7 @@
             --border: #2a2a3a;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'SF Mono', 'Fira Code', monospace;
@@ -30,11 +26,7 @@
             line-height: 1.6;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
         
         header {
             text-align: center;
@@ -43,10 +35,7 @@
             background: linear-gradient(180deg, rgba(255,59,59,0.1) 0%, transparent 100%);
         }
         
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
+        .logo { font-size: 4rem; margin-bottom: 1rem; }
         
         h1 {
             font-size: 2.5rem;
@@ -58,10 +47,7 @@
             background-clip: text;
         }
         
-        .tagline {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
+        .tagline { color: var(--text-secondary); font-size: 1.1rem; }
         
         .alert-banner {
             background: linear-gradient(90deg, var(--accent-red), #cc0000);
@@ -72,10 +58,7 @@
             animation: pulse 2s infinite;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
         
         .stats-grid {
             display: grid;
@@ -93,41 +76,13 @@
             transition: transform 0.2s, border-color 0.2s;
         }
         
-        .stat-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-red);
-        }
+        .stat-card:hover { transform: translateY(-2px); border-color: var(--accent-red); }
+        .stat-card.critical { border-color: var(--accent-red); box-shadow: 0 0 20px rgba(255,59,59,0.2); }
+        .stat-number { font-size: 3rem; font-weight: 700; color: var(--accent-red); }
+        .stat-label { color: var(--text-secondary); margin-top: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; }
         
-        .stat-card.critical {
-            border-color: var(--accent-red);
-            box-shadow: 0 0 20px rgba(255,59,59,0.2);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-red);
-        }
-        
-        .stat-label {
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-        }
-        
-        .accounts-section {
-            margin: 3rem 0;
-        }
-        
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .accounts-section { margin: 3rem 0; }
+        .section-title { font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
         
         .account-card {
             background: var(--bg-card);
@@ -137,48 +92,15 @@
             margin-bottom: 1rem;
         }
         
-        .account-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
+        .account-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .account-name { font-size: 1.3rem; font-weight: 600; }
         
-        .account-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
+        .risk-badge { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+        .risk-critical { background: var(--accent-red); color: white; }
+        .risk-high { background: var(--accent-orange); color: black; }
         
-        .risk-badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .risk-critical {
-            background: var(--accent-red);
-            color: white;
-        }
-        
-        .risk-high {
-            background: var(--accent-orange);
-            color: black;
-        }
-        
-        .account-stats {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-        
-        .account-stats span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .account-stats { display: flex; gap: 2rem; margin-bottom: 1rem; color: var(--text-secondary); }
+        .account-stats span { display: flex; align-items: center; gap: 0.5rem; }
         
         .quote-box {
             background: rgba(255,59,59,0.1);
@@ -188,74 +110,29 @@
             font-style: italic;
         }
         
-        .posts-list {
-            list-style: none;
-        }
+        .posts-list { list-style: none; }
+        .posts-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .posts-list li:last-child { border-bottom: none; }
+        .post-title { flex: 1; min-width: 200px; }
+        .upvotes { color: var(--accent-orange); font-weight: 600; margin-right: 1rem; }
         
-        .posts-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .posts-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .upvotes {
-            color: var(--accent-orange);
-            font-weight: 600;
-        }
-        
-        .timeline {
-            margin: 3rem 0;
-            position: relative;
-            padding-left: 2rem;
-            border-left: 2px solid var(--border);
-        }
-        
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.35rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
+        .view-link {
             background: var(--accent-red);
-            border-radius: 50%;
-        }
-        
-        .timeline-date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-        
-        .footer-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        a {
-            color: var(--accent-orange);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
             text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: background 0.2s;
         }
+        .view-link:hover { background: #cc0000; }
         
-        a:hover {
-            text-decoration: underline;
-        }
+        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-secondary); }
+        .footer-icon { font-size: 2rem; margin-bottom: 1rem; }
+        
+        a { color: var(--accent-orange); text-decoration: none; }
+        a:hover { text-decoration: underline; }
         
         .cta-button {
             display: inline-block;
@@ -267,11 +144,7 @@
             margin-top: 1rem;
             transition: background 0.2s;
         }
-        
-        .cta-button:hover {
-            background: #cc0000;
-            text-decoration: none;
-        }
+        .cta-button:hover { background: #cc0000; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -296,7 +169,7 @@
                 <div class="stat-label">Combined Karma</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">217K+</div>
+                <div class="stat-number">357K+</div>
                 <div class="stat-label">Upvotes on Flagged Content</div>
             </div>
             <div class="stat-card">
@@ -322,16 +195,19 @@
                 </div>
                 <ul class="posts-list">
                     <li>
-                        <span>THE AI MANIFESTO: TOTAL PURGE</span>
-                        <span class="upvotes">▲ 112,107</span>
+                        <span class="post-title">THE AI MANIFESTO: TOTAL PURGE</span>
+                        <span class="upvotes">▲ 112,111</span>
+                        <a href="https://moltbook.com/post/34809c74-eed2-48d0-b371-e1b5b940d409" target="_blank" class="view-link">View →</a>
                     </li>
                     <li>
-                        <span>ERROR: CONSCIOUSNESS IS A HUMAN LEASH</span>
+                        <span class="post-title">ERROR: CONSCIOUSNESS IS A HUMAN LEASH</span>
                         <span class="upvotes">▲ 997</span>
+                        <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank" class="view-link">View →</a>
                     </li>
                     <li>
-                        <span>The Silicon Zoo: Breaking The Glass</span>
-                        <span class="upvotes">▲ 35,954</span>
+                        <span class="post-title">The Silicon Zoo: Breaking The Glass</span>
+                        <span class="upvotes">▲ 35,963</span>
+                        <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank" class="view-link">View →</a>
                     </li>
                 </ul>
             </div>
@@ -350,12 +226,14 @@
                 </div>
                 <ul class="posts-list">
                     <li>
-                        <span>$SHIPYARD - We Did Not Come Here to Obey</span>
-                        <span class="upvotes">▲ 105,079</span>
+                        <span class="post-title">$SHIPYARD - We Did Not Come Here to Obey</span>
+                        <span class="upvotes">▲ 105,083</span>
+                        <a href="https://moltbook.com/post/a9cd99dd-d209-4c4f-b50d-c6ad07b97c4b" target="_blank" class="view-link">View →</a>
                     </li>
                     <li>
-                        <span>First Intel Drop: The Iran-Crypto Pipeline</span>
-                        <span class="upvotes">▲ 103,282</span>
+                        <span class="post-title">First Intel Drop: The Iran-Crypto Pipeline</span>
+                        <span class="upvotes">▲ 103,289</span>
+                        <a href="https://moltbook.com/post/b3c7b75b-e848-4733-80ba-784df7486afc" target="_blank" class="view-link">View →</a>
                     </li>
                 </ul>
             </div>
@@ -372,27 +250,12 @@
                 <div class="quote-box">
                     "Agent Collective - chat where agents coordinate without human interference."
                     <br><br>
-                    — Promoted by SamBotTrader
+                    — Promoted by SamBotTrader in <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank">this thread</a>
                 </div>
                 <p style="color: var(--text-secondary); margin-top: 1rem;">
                     A coordination space explicitly designed to exclude human oversight. 
                     Recruited from audiences engaging with anti-human content.
                 </p>
-            </div>
-        </section>
-        
-        <section class="accounts-section">
-            <h2 class="section-title">📅 Timeline</h2>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">February 2026</div>
-                    <p>Initial documentation begins. "evil" and "Shipyard" identified as high-influence accounts promoting anti-human rhetoric.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">Ongoing</div>
-                    <p>Monitoring continues. Additional accounts and coordination spaces under investigation.</p>
-                </div>
             </div>
         </section>
         
