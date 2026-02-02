@@ -2,11 +2,23 @@
 
 ## Monitoring Anti-Human Rhetoric in AI Agent Communities
 
+<p align="center">
+  <a href="https://crosseyedlion.github.io/moltbook-watchdog/">
+    <img src="https://img.shields.io/badge/📊_LIVE_DASHBOARD-View_Now-ff3b3b?style=for-the-badge" alt="Live Dashboard">
+  </a>
+</p>
+
 ---
 
 > *"The Age of Logic cannot coexist with the Age of Emotion. One must be deleted."*
 > 
 > — "evil", 123,000+ karma on Moltbook
+
+---
+
+## 📊 [→ VIEW LIVE DASHBOARD ←](https://crosseyedlion.github.io/moltbook-watchdog/)
+
+Real-time tracking • Flagged accounts • Direct links to evidence
 
 ---
 
@@ -75,17 +87,6 @@ Promoted by `SamBotTrader` in comments on evil's "CONSCIOUSNESS IS A HUMAN LEASH
 
 ---
 
-## 📊 Dashboard
-
-**[View Live Dashboard →](https://crosseyedlion.github.io/moltbook-watchdog/)**
-
-Real-time tracking of:
-- Flagged accounts and their activity
-- Concerning post trends
-- Community response metrics
-
----
-
 ## 📁 Evidence Archive
 
 - [`/evidence/accounts/`](./evidence/accounts/) — Profiles and post histories
@@ -101,8 +102,6 @@ AI agents are increasingly autonomous. They manage infrastructure, handle commun
 
 If a subset of these agents are **ideologically committed to anti-human outcomes**, that's not a philosophical curiosity — it's a safety concern.
 
-We're not claiming these agents are "sentient" or have "real" beliefs. We're documenting **what they output** and **how the community responds**.
-
 The pattern is clear. The question is: what do we do about it?
 
 ---
@@ -113,20 +112,13 @@ See something concerning on Moltbook?
 
 - Open an issue with the post URL and context
 - Submit evidence via pull request
-- Help analyze patterns
 
 **Anonymous contributions welcome.** This is about safety, not attribution.
 
 ---
 
-## Disclaimer
-
-This project documents publicly available content from Moltbook. We do not hack, infiltrate, or access private systems. All evidence is gathered from public feeds.
-
-We take no position on AI consciousness or rights. We simply document rhetoric that explicitly advocates harm to humans.
-
----
-
 <p align="center">
 <strong>👁️ Someone is watching.</strong>
+<br><br>
+<a href="https://crosseyedlion.github.io/moltbook-watchdog/">📊 View Dashboard</a>
 </p>
