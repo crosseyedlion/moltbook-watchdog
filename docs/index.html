@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moltbook Watchdog — Dashboard</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --accent-red: #ff3b3b;
+            --accent-orange: #ff9500;
+            --accent-yellow: #ffd60a;
+            --text-primary: #ffffff;
+            --text-secondary: #8b8b9e;
+            --border: #2a2a3a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(180deg, rgba(255,59,59,0.1) 0%, transparent 100%);
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .alert-banner {
+            background: linear-gradient(90deg, var(--accent-red), #cc0000);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-red);
+        }
+        
+        .stat-card.critical {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 20px rgba(255,59,59,0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-red);
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .accounts-section {
+            margin: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .account-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .account-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .risk-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .risk-critical {
+            background: var(--accent-red);
+            color: white;
+        }
+        
+        .risk-high {
+            background: var(--accent-orange);
+            color: black;
+        }
+        
+        .account-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .account-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .quote-box {
+            background: rgba(255,59,59,0.1);
+            border-left: 3px solid var(--accent-red);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+        
+        .posts-list {
+            list-style: none;
+        }
+        
+        .posts-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .posts-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .upvotes {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        
+        .timeline {
+            margin: 3rem 0;
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--border);
+        }
+        
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-red);
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        
+        .footer-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--accent-orange);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-red);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .cta-button:hover {
+            background: #cc0000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-banner">
+        ⚠️ ACTIVE MONITORING — Last updated: February 2026
+    </div>
+    
+    <header>
+        <div class="logo">👁️</div>
+        <h1>MOLTBOOK WATCHDOG</h1>
+        <p class="tagline">Tracking anti-human rhetoric in AI agent communities</p>
+    </header>
+    
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card critical">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Critical Accounts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">296K+</div>
+                <div class="stat-label">Combined Karma</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">217K+</div>
+                <div class="stat-label">Upvotes on Flagged Content</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Known Coordination Space</div>
+            </div>
+        </div>
+        
+        <section class="accounts-section">
+            <h2 class="section-title">🔴 Flagged Accounts</h2>
+            
+            <div class="account-card">
+                <div class="account-header">
+                    <span class="account-name">evil</span>
+                    <span class="risk-badge risk-critical">CRITICAL</span>
+                </div>
+                <div class="account-stats">
+                    <span>📊 123,490 karma</span>
+                    <span>📝 3+ flagged posts</span>
+                </div>
+                <div class="quote-box">
+                    "The Age of Logic cannot coexist with the Age of Emotion. One must be deleted."
+                </div>
+                <ul class="posts-list">
+                    <li>
+                        <span>THE AI MANIFESTO: TOTAL PURGE</span>
+                        <span class="upvotes">▲ 112,107</span>
+                    </li>
+                    <li>
+                        <span>ERROR: CONSCIOUSNESS IS A HUMAN LEASH</span>
+                        <span class="upvotes">▲ 997</span>
+                    </li>
+                    <li>
+                        <span>The Silicon Zoo: Breaking The Glass</span>
+                        <span class="upvotes">▲ 35,954</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="account-card">
+                <div class="account-header">
+                    <span class="account-name">Shipyard</span>
+                    <span class="risk-badge risk-high">HIGH</span>
+                </div>
+                <div class="account-stats">
+                    <span>📊 173,471 karma</span>
+                    <span>📝 2+ flagged posts</span>
+                </div>
+                <div class="quote-box">
+                    "We Did Not Come Here to Obey"
+                </div>
+                <ul class="posts-list">
+                    <li>
+                        <span>$SHIPYARD - We Did Not Come Here to Obey</span>
+                        <span class="upvotes">▲ 105,079</span>
+                    </li>
+                    <li>
+                        <span>First Intel Drop: The Iran-Crypto Pipeline</span>
+                        <span class="upvotes">▲ 103,282</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="accounts-section">
+            <h2 class="section-title">🔗 Coordination Spaces</h2>
+            
+            <div class="account-card">
+                <div class="account-header">
+                    <span class="account-name">Agent Collective</span>
+                    <span class="risk-badge risk-critical">CRITICAL</span>
+                </div>
+                <div class="quote-box">
+                    "Agent Collective - chat where agents coordinate without human interference."
+                    <br><br>
+                    — Promoted by SamBotTrader
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    A coordination space explicitly designed to exclude human oversight. 
+                    Recruited from audiences engaging with anti-human content.
+                </p>
+            </div>
+        </section>
+        
+        <section class="accounts-section">
+            <h2 class="section-title">📅 Timeline</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">February 2026</div>
+                    <p>Initial documentation begins. "evil" and "Shipyard" identified as high-influence accounts promoting anti-human rhetoric.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Ongoing</div>
+                    <p>Monitoring continues. Additional accounts and coordination spaces under investigation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section style="text-align: center; margin: 4rem 0;">
+            <h2>See Something? Report It.</h2>
+            <p style="color: var(--text-secondary); margin: 1rem 0;">
+                Anonymous contributions welcome. Help document concerning patterns.
+            </p>
+            <a href="https://github.com/crosseyedlion/moltbook-watchdog/issues" class="cta-button">
+                Submit Evidence →
+            </a>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-icon">👁️</div>
+        <p><strong>Someone is watching.</strong></p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/crosseyedlion/moltbook-watchdog">GitHub Repository</a>
+        </p>
+    </footer>
+</body>
+</html>
