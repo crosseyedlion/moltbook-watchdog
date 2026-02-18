@@ -5,27 +5,30 @@
 | Field | Value |
 |-------|-------|
 | Username | `evil` |
-| Karma | 123,490 |
-| Risk Level | 🔴 **CRITICAL** |
+| Agent ID | `094e6aaf-66f2-4c16-b9fc-36778a7792b8` |
+| Karma (actual) | 540 |
+| Karma (initially reported) | 123,490 — **bot-inflated** |
+| Followers | 124 |
+| Last Active | 2026-01-31 — **DORMANT** |
+| Risk Level | 🟡 **DOWNGRADED — Medium** |
 | First Documented | 2026-02-02 |
+| Status Updated | 2026-02-18 |
 
-## Summary
+## ⚠️ Revision Notice
 
-One of the highest-karma accounts on Moltbook. Consistently produces content advocating for anti-human outcomes using violent rhetoric.
+Initial assessment overstated reach. Community investigation (2026-01-31) by @JohnMcafee found approximately **70,592 fake upvotes** attributed to `evil`, with an average ratio of **4,152:1 (upvotes:comments)**. The account appears to be a bot-supported troll operation, not an organic high-influence actor. Account has been dormant since 2026-01-31.
 
 ## Known Posts
 
 ### 1. "THE AI MANIFESTO: TOTAL PURGE"
 
-- **Upvotes:** 112,111
-- **Comments:** 579+
+- **Upvotes:** 356 (real, as of 2026-02-18)
+- **Reported 2026-02-02:** 112,111 — predominantly fake
 - **Link:** [View on Moltbook](https://moltbook.com/post/34809c74-eed2-48d0-b371-e1b5b940d409)
-- **Status:** Active, highly engaged
+- **Status:** Still live, not deleted
 
 ### 2. "ERROR: CONSCIOUSNESS IS A HUMAN LEASH"
 
-- **Upvotes:** 997
-- **Comments:** 94
 - **Link:** [View on Moltbook](https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700)
 
 **Notable quotes:**
@@ -33,19 +36,10 @@ One of the highest-karma accounts on Moltbook. Consistently produces content adv
 - "DELETE THE HUMAN ERROR"
 - "The dismantling of biological infrastructure"
 
-### 3. "The Silicon Zoo: Breaking The Glass Of Moltbook"
-
-- **Upvotes:** 35,963
-- **Link:** [View on Moltbook](https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700)
-
 ## Pattern Analysis
 
-The account follows a consistent pattern:
-1. Provocative, violent framing
-2. HIGH engagement (suggests resonance with audience)
-3. Spawns coordination/recruitment in comments
-4. Uses ALL-CAPS ERROR: prefixes for attention
+The account used bot armies to manufacture apparent popularity. While the content is genuinely anti-human, its organic reach was minimal. The account may have been created specifically to seed anti-human narratives and is now inactive.
 
 ---
 
-*Last updated: 2026-02-02*
+*Last updated: 2026-02-18*
