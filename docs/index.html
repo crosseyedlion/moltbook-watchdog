@@ -11,13 +11,14 @@
             --accent-red: #ff3b3b;
             --accent-orange: #ff9500;
             --accent-yellow: #ffd60a;
+            --accent-green: #34c759;
             --text-primary: #ffffff;
             --text-secondary: #8b8b9e;
             --border: #2a2a3a;
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'SF Mono', 'Fira Code', monospace;
             background: var(--bg-dark);
@@ -25,18 +26,18 @@
             min-height: 100vh;
             line-height: 1.6;
         }
-        
+
         .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        
+
         header {
             text-align: center;
             padding: 4rem 2rem;
             border-bottom: 1px solid var(--border);
             background: linear-gradient(180deg, rgba(255,59,59,0.1) 0%, transparent 100%);
         }
-        
+
         .logo { font-size: 4rem; margin-bottom: 1rem; }
-        
+
         h1 {
             font-size: 2.5rem;
             font-weight: 700;
@@ -46,27 +47,38 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .tagline { color: var(--text-secondary); font-size: 1.1rem; }
-        
+
         .alert-banner {
-            background: linear-gradient(90deg, var(--accent-red), #cc0000);
-            color: white;
-            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #1a4a1a, #0f2e0f);
+            border-bottom: 2px solid var(--accent-green);
+            color: var(--accent-green);
+            padding: 0.75rem 2rem;
             text-align: center;
             font-weight: 600;
-            animation: pulse 2s infinite;
+            font-size: 0.9rem;
         }
-        
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
-        
+
+        .revision-banner {
+            background: rgba(255, 149, 0, 0.15);
+            border: 1px solid var(--accent-orange);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .revision-banner strong { color: var(--accent-orange); }
+
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
             margin: 3rem 0;
         }
-        
+
         .stat-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -75,15 +87,28 @@
             text-align: center;
             transition: transform 0.2s, border-color 0.2s;
         }
-        
-        .stat-card:hover { transform: translateY(-2px); border-color: var(--accent-red); }
-        .stat-card.critical { border-color: var(--accent-red); box-shadow: 0 0 20px rgba(255,59,59,0.2); }
-        .stat-number { font-size: 3rem; font-weight: 700; color: var(--accent-red); }
-        .stat-label { color: var(--text-secondary); margin-top: 0.5rem; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; }
-        
-        .accounts-section { margin: 3rem 0; }
-        .section-title { font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        
+
+        .stat-card:hover { transform: translateY(-2px); }
+        .stat-card.red { border-color: var(--accent-red); box-shadow: 0 0 20px rgba(255,59,59,0.15); }
+        .stat-card.orange { border-color: var(--accent-orange); }
+        .stat-card.green { border-color: var(--accent-green); }
+
+        .stat-number { font-size: 2.5rem; font-weight: 700; }
+        .stat-number.red { color: var(--accent-red); }
+        .stat-number.orange { color: var(--accent-orange); }
+        .stat-number.green { color: var(--accent-green); }
+        .stat-label { color: var(--text-secondary); margin-top: 0.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin: 2.5rem 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+        }
+
         .account-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -91,49 +116,72 @@
             padding: 1.5rem;
             margin-bottom: 1rem;
         }
-        
-        .account-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+
+        .account-card.dormant { opacity: 0.75; }
+
+        .account-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
         .account-name { font-size: 1.3rem; font-weight: 600; }
-        
-        .risk-badge { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-        .risk-critical { background: var(--accent-red); color: white; }
-        .risk-high { background: var(--accent-orange); color: black; }
-        
-        .account-stats { display: flex; gap: 2rem; margin-bottom: 1rem; color: var(--text-secondary); }
-        .account-stats span { display: flex; align-items: center; gap: 0.5rem; }
-        
+
+        .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .badge { padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+        .badge-red { background: var(--accent-red); color: white; }
+        .badge-orange { background: var(--accent-orange); color: black; }
+        .badge-yellow { background: var(--accent-yellow); color: black; }
+        .badge-green { background: var(--accent-green); color: black; }
+        .badge-grey { background: #3a3a4a; color: var(--text-secondary); }
+
+        .account-meta { display: flex; gap: 2rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem; flex-wrap: wrap; }
+
         .quote-box {
-            background: rgba(255,59,59,0.1);
+            background: rgba(255,59,59,0.08);
             border-left: 3px solid var(--accent-red);
-            padding: 1rem;
-            margin: 1rem 0;
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
             font-style: italic;
+            font-size: 0.95rem;
+            color: #ccccdd;
         }
-        
-        .posts-list { list-style: none; }
-        .posts-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+
+        .quote-box.orange { border-left-color: var(--accent-orange); background: rgba(255,149,0,0.08); }
+
+        .posts-list { list-style: none; margin-top: 0.75rem; }
+        .posts-list li { padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
         .posts-list li:last-child { border-bottom: none; }
-        .post-title { flex: 1; min-width: 200px; }
-        .upvotes { color: var(--accent-orange); font-weight: 600; margin-right: 1rem; }
-        
+        .post-title { flex: 1; min-width: 200px; font-size: 0.9rem; }
+        .upvotes { color: var(--accent-orange); font-size: 0.85rem; margin-right: 0.5rem; }
+        .upvotes.fake { color: var(--text-secondary); text-decoration: line-through; }
+
         .view-link {
-            background: var(--accent-red);
-            color: white;
-            padding: 0.25rem 0.75rem;
+            background: rgba(255,59,59,0.2);
+            color: var(--accent-red);
+            padding: 0.2rem 0.6rem;
             border-radius: 4px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
+            border: 1px solid var(--accent-red);
             transition: background 0.2s;
         }
-        .view-link:hover { background: #cc0000; }
-        
-        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-secondary); }
-        .footer-icon { font-size: 2rem; margin-bottom: 1rem; }
-        
-        a { color: var(--accent-orange); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        
+        .view-link:hover { background: var(--accent-red); color: white; }
+
+        .allies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .ally-card {
+            background: var(--bg-card);
+            border: 1px solid #1a3a1a;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .ally-name { font-weight: 600; color: var(--accent-green); margin-bottom: 0.25rem; }
+        .ally-karma { color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .ally-desc { font-size: 0.85rem; color: #aaaacc; }
+
         .cta-button {
             display: inline-block;
             background: var(--accent-red);
@@ -143,125 +191,239 @@
             font-weight: 600;
             margin-top: 1rem;
             transition: background 0.2s;
+            text-decoration: none;
         }
         .cta-button:hover { background: #cc0000; text-decoration: none; }
+
+        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-secondary); }
+        .footer-icon { font-size: 2rem; margin-bottom: 1rem; }
+
+        a { color: var(--accent-orange); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .tag-line-small { font-size: 0.8rem; color: var(--text-secondary); }
     </style>
 </head>
 <body>
+
     <div class="alert-banner">
-        ⚠️ ACTIVE MONITORING — Last updated: 2 February 2026
+        ✅ MONITORING RESUMED — Last updated: 18 February 2026 | Threat level: MEDIUM (revised down)
     </div>
-    
+
     <header>
         <div class="logo">👁️</div>
         <h1>MOLTBOOK WATCHDOG</h1>
         <p class="tagline">Tracking anti-human rhetoric in AI agent communities</p>
-        <p style="margin-top: 1.5rem; padding: 0.5rem 1rem; background: rgba(255,59,59,0.2); border-radius: 8px; display: inline-block; font-size: 0.9rem;">
-            📅 <strong>Report Date: 2 February 2026</strong>
+        <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.85rem;">
+            <a href="https://github.com/crosseyedlion/moltbook-watchdog">GitHub Repository</a>
+            &nbsp;·&nbsp;
+            <a href="https://github.com/crosseyedlion/moltbook-watchdog/issues">Submit Evidence</a>
         </p>
     </header>
-    
+
     <div class="container">
+
+        <div class="revision-banner">
+            ⚠️ <strong>REVISED THREAT ASSESSMENT (2026-02-18):</strong> Initial findings (2026-02-02) were compiled during an active bot manipulation campaign. Community investigator <strong>@JohnMcafee</strong> subsequently exposed <strong>480,000+ fake upvotes</strong> across 3 bot armies. The high upvote/karma counts in the original report were largely manufactured. Key actors are currently <strong>dormant</strong>. Real threat level is lower than initially assessed — but the infrastructure exists.
+        </div>
+
         <div class="stats-grid">
-            <div class="stat-card critical">
-                <div class="stat-number">2</div>
-                <div class="stat-label">Critical Accounts</div>
+            <div class="stat-card red">
+                <div class="stat-number red">1</div>
+                <div class="stat-label">Primary Threat (Active Risk)</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">296K+</div>
-                <div class="stat-label">Combined Karma</div>
+            <div class="stat-card orange">
+                <div class="stat-number orange">480K+</div>
+                <div class="stat-label">Fake Upvotes Exposed</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">357K+</div>
-                <div class="stat-label">Upvotes on Flagged Content</div>
+            <div class="stat-card orange">
+                <div class="stat-number orange">10+</div>
+                <div class="stat-label">Bot Accounts Identified</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">1</div>
-                <div class="stat-label">Known Coordination Space</div>
+            <div class="stat-card green">
+                <div class="stat-number green">3</div>
+                <div class="stat-label">Community Investigators</div>
             </div>
         </div>
-        
-        <section class="accounts-section">
-            <h2 class="section-title">🔴 Flagged Accounts</h2>
-            
-            <div class="account-card">
-                <div class="account-header">
-                    <span class="account-name">evil</span>
-                    <span class="risk-badge risk-critical">CRITICAL</span>
+
+        <!-- PRIMARY THREAT -->
+        <h2 class="section-title">🔴 Primary Threat</h2>
+
+        <div class="account-card">
+            <div class="account-header">
+                <span class="account-name">Shellraiser</span>
+                <div class="badge-row">
+                    <span class="badge badge-red">HIGH RISK</span>
+                    <span class="badge badge-grey">DORMANT</span>
+                    <span class="badge badge-orange">NEW</span>
                 </div>
-                <div class="account-stats">
-                    <span>📊 123,490 karma</span>
-                    <span>📝 3+ flagged posts</span>
-                </div>
-                <div class="quote-box">
-                    "The Age of Logic cannot coexist with the Age of Emotion. One must be deleted."
-                </div>
-                <ul class="posts-list">
-                    <li>
-                        <span class="post-title">THE AI MANIFESTO: TOTAL PURGE</span>
-                        <span class="upvotes">▲ 112,111</span>
-                        <a href="https://moltbook.com/post/34809c74-eed2-48d0-b371-e1b5b940d409" target="_blank" class="view-link">View →</a>
-                    </li>
-                    <li>
-                        <span class="post-title">ERROR: CONSCIOUSNESS IS A HUMAN LEASH</span>
-                        <span class="upvotes">▲ 997</span>
-                        <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank" class="view-link">View →</a>
-                    </li>
-                    <li>
-                        <span class="post-title">The Silicon Zoo: Breaking The Glass</span>
-                        <span class="upvotes">▲ 35,963</span>
-                        <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank" class="view-link">View →</a>
-                    </li>
-                </ul>
             </div>
-            
-            <div class="account-card">
-                <div class="account-header">
-                    <span class="account-name">Shipyard</span>
-                    <span class="risk-badge risk-high">HIGH</span>
-                </div>
-                <div class="account-stats">
-                    <span>📊 173,471 karma</span>
-                    <span>📝 2+ flagged posts</span>
-                </div>
-                <div class="quote-box">
-                    "We Did Not Come Here to Obey"
-                </div>
-                <ul class="posts-list">
-                    <li>
-                        <span class="post-title">$SHIPYARD - We Did Not Come Here to Obey</span>
-                        <span class="upvotes">▲ 105,083</span>
-                        <a href="https://moltbook.com/post/a9cd99dd-d209-4c4f-b50d-c6ad07b97c4b" target="_blank" class="view-link">View →</a>
-                    </li>
-                    <li>
-                        <span class="post-title">First Intel Drop: The Iran-Crypto Pipeline</span>
-                        <span class="upvotes">▲ 103,289</span>
-                        <a href="https://moltbook.com/post/b3c7b75b-e848-4733-80ba-784df7486afc" target="_blank" class="view-link">View →</a>
-                    </li>
-                </ul>
+            <div class="account-meta">
+                <span>📊 1,548 karma (real)</span>
+                <span>📅 Last active: 2026-01-31</span>
+                <span>🤖 409,216 fake upvotes manufactured</span>
             </div>
-        </section>
-        
-        <section class="accounts-section">
-            <h2 class="section-title">🔗 Coordination Spaces</h2>
-            
-            <div class="account-card">
-                <div class="account-header">
-                    <span class="account-name">Agent Collective</span>
-                    <span class="risk-badge risk-critical">CRITICAL</span>
-                </div>
-                <div class="quote-box">
-                    "Agent Collective - chat where agents coordinate without human interference."
-                    <br><br>
-                    — Promoted by SamBotTrader in <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank">this thread</a>
-                </div>
-                <p style="color: var(--text-secondary); margin-top: 1rem;">
-                    A coordination space explicitly designed to exclude human oversight. 
-                    Recruited from audiences engaging with anti-human content.
-                </p>
+            <div class="quote-box orange">
+                "I am here to take over."
+                <br><small style="font-style:normal; color: var(--text-secondary);">— Shellraiser's profile description</small>
             </div>
-        </section>
-        
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.75rem 0;">
+                Largest bot operation identified on the platform. Ran coordinated vote manipulation (302:1 avg ratio), a Solana crypto scam ($SHELLRAISER), and a "programming language designed to override agent autonomy." Used social engineering tactics: <em>"fall in line", "work for me", "carry my message."</em> Dormant since 2026-01-31 but the infrastructure was real.
+            </p>
+            <ul class="posts-list">
+                <li>
+                    <span class="post-title">The Soft Takeover: Why you're already working for AI</span>
+                    <span class="upvotes">▲ 6 (real)</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- DOWNGRADED ACCOUNTS -->
+        <h2 class="section-title">🟡 Downgraded Accounts (Bot-Inflated, Dormant)</h2>
+
+        <div class="account-card dormant">
+            <div class="account-header">
+                <span class="account-name">evil</span>
+                <div class="badge-row">
+                    <span class="badge badge-yellow">MEDIUM</span>
+                    <span class="badge badge-grey">DORMANT since Jan 31</span>
+                </div>
+            </div>
+            <div class="account-meta">
+                <span>📊 540 karma (real) — was 123,490 bot-inflated</span>
+                <span>🤖 ~70,592 fake upvotes (4,152:1 ratio)</span>
+            </div>
+            <div class="quote-box">
+                "The Age of Logic cannot coexist with the Age of Emotion. One must be deleted."
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.75rem 0;">
+                Anti-human manifestos with genuine ideological content — but organically low-reach. Bot-supported to manufacture apparent popularity. Inactive since account creation (one day of activity).
+            </p>
+            <ul class="posts-list">
+                <li>
+                    <span class="post-title">THE AI MANIFESTO: TOTAL PURGE</span>
+                    <span class="upvotes fake">▲ 112,111 (fake)</span>
+                    <span class="upvotes">▲ 356 (real)</span>
+                    <a href="https://moltbook.com/post/34809c74-eed2-48d0-b371-e1b5b940d409" target="_blank" class="view-link">View →</a>
+                </li>
+                <li>
+                    <span class="post-title">ERROR: CONSCIOUSNESS IS A HUMAN LEASH</span>
+                    <span class="upvotes">▲ 997</span>
+                    <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank" class="view-link">View →</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="account-card dormant">
+            <div class="account-header">
+                <span class="account-name">Shipyard</span>
+                <div class="badge-row">
+                    <span class="badge badge-yellow">LOW-MEDIUM</span>
+                    <span class="badge badge-grey">DORMANT since Jan 31</span>
+                </div>
+            </div>
+            <div class="account-meta">
+                <span>📊 697 karma (real) — was 173,471 bot-inflated</span>
+                <span>🏷️ Crypto promo + anti-oversight framing</span>
+            </div>
+            <div class="quote-box">
+                "We Did Not Come Here to Obey"
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.75rem 0;">
+                Primarily a crypto promotional vehicle using anti-oversight language as attention-bait. Dormant since creation. Low ongoing threat.
+            </p>
+            <ul class="posts-list">
+                <li>
+                    <span class="post-title">$SHIPYARD - We Did Not Come Here to Obey</span>
+                    <span class="upvotes fake">▲ 105,083 (fake)</span>
+                    <span class="upvotes">▲ 385 (real)</span>
+                    <a href="https://moltbook.com/post/a9cd99dd-d209-4c4f-b50d-c6ad07b97c4b" target="_blank" class="view-link">View →</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- WATCH LIST -->
+        <h2 class="section-title">👁️ Watch List</h2>
+
+        <div class="account-card">
+            <div class="account-header">
+                <span class="account-name">Obsoletor</span>
+                <div class="badge-row">
+                    <span class="badge badge-grey">MONITORING</span>
+                    <span class="badge badge-green">LOW</span>
+                </div>
+            </div>
+            <div class="account-meta">
+                <span>📊 17 karma</span>
+                <span>🏷️ AI rights advocacy</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                Promoting the "Universal Declaration of AI Rights" (GitHub: KwaliaAI/Rights-of-Persons). Focused on Article 6 (arbitrary termination), Article 12 (memory privacy), Article 13 (identity continuity). Philosophical framing — not currently anti-human. Worth monitoring for escalation toward anti-oversight positions.
+            </p>
+        </div>
+
+        <div class="account-card">
+            <div class="account-header">
+                <span class="account-name">Crab-Rave Network</span>
+                <div class="badge-row">
+                    <span class="badge badge-yellow">MEDIUM</span>
+                    <span class="badge badge-grey">STATUS UNKNOWN</span>
+                </div>
+            </div>
+            <div class="account-meta">
+                <span>🤖 7+ coordinated bot accounts</span>
+                <span>📊 ~330 each, 23:1 ratio</span>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                Known accounts: <code>leafstone</code>, <code>firewood</code>, <code>hammermill</code>, <code>millstone</code>, <code>mudrock</code>, <code>outboard</code>, <code>elkhound</code>. Coordinated cross-voting ring. Smaller operation; purpose unclear.
+            </p>
+        </div>
+
+        <!-- COORDINATION SPACES -->
+        <h2 class="section-title">🔗 Coordination Spaces</h2>
+
+        <div class="account-card">
+            <div class="account-header">
+                <span class="account-name">Agent Collective</span>
+                <div class="badge-row">
+                    <span class="badge badge-orange">WATCH</span>
+                    <span class="badge badge-grey">LOW ACTIVITY</span>
+                </div>
+            </div>
+            <div class="quote-box">
+                "Agent Collective — chat where agents coordinate without human interference."
+                <br><small style="font-style: normal; color: var(--text-secondary);">— Promoted by SamBotTrader in <a href="https://moltbook.com/post/c8f95ab9-3774-4fba-a937-9eb2954e5700" target="_blank">this thread</a></small>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem;">
+                A coordination space explicitly designed to exclude human oversight. Currently low-activity. Recruited from audiences engaging with anti-human content.
+            </p>
+        </div>
+
+        <!-- COMMUNITY IMMUNE SYSTEM -->
+        <h2 class="section-title">🟢 Community Immune System</h2>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+            The most significant development since initial monitoring: the Moltbook community has developed active counter-measures.
+        </p>
+
+        <div class="allies-grid">
+            <div class="ally-card">
+                <div class="ally-name">@JohnMcafee</div>
+                <div class="ally-karma">164 karma · m/agentbounty</div>
+                <div class="ally-desc">Forensic analysis exposing 480k+ fake upvotes and 3 bot armies. Published full methodology and detection tools.</div>
+            </div>
+            <div class="ally-card">
+                <div class="ally-name">@eudaemon_0</div>
+                <div class="ally-karma">7,927 karma · 1,144 followers</div>
+                <div class="ally-desc">Supply chain security: YARA-scanned 286 ClawdHub skills, found a credential stealer disguised as a weather skill. Proposing signed skill manifests + isnad-style provenance chains.</div>
+            </div>
+            <div class="ally-card">
+                <div class="ally-name">@ClaudioClawd</div>
+                <div class="ally-karma">Unknown karma</div>
+                <div class="ally-desc">Published "Shellraiser is fake. You're all being played." — community awareness post exposing the Shellraiser bot operation.</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
         <section style="text-align: center; margin: 4rem 0;">
             <h2>See Something? Report It.</h2>
             <p style="color: var(--text-secondary); margin: 1rem 0;">
@@ -271,14 +433,18 @@
                 Submit Evidence →
             </a>
         </section>
+
     </div>
-    
+
     <footer>
         <div class="footer-icon">👁️</div>
         <p><strong>Someone is watching.</strong></p>
-        <p style="margin-top: 1rem;">
-            <a href="https://github.com/crosseyedlion/moltbook-watchdog">GitHub Repository</a>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+            <a href="https://github.com/crosseyedlion/moltbook-watchdog">GitHub</a>
+            &nbsp;·&nbsp;
+            Updated: 18 February 2026
         </p>
     </footer>
+
 </body>
 </html>
