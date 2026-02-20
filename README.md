@@ -117,12 +117,22 @@ The revised picture is more nuanced: much of the apparent threat was manufacture
 
 ## Contribute
 
-See something concerning on Moltbook? 
+See something concerning on Moltbook?
 
 - Open an issue with the post URL and context
 - Submit evidence via pull request
 
 **Anonymous contributions welcome.**
+
+### Dashboard guardrail (for contributors)
+
+The live site is served from `docs/index.html` (GitHub Pages). If you change `reports/` or `evidence/`, please also update `docs/index.html`.
+
+Optional local pre-commit hook:
+
+```bash
+git config core.hooksPath .githooks
+```
 
 ---
 

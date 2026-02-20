@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Guardrail: prevent forgetting to update the GitHub Pages dashboard.
+
+./scripts/dashboard-guard.sh --cached
